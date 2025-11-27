@@ -16,7 +16,7 @@ import { IoMenuSharp } from "react-icons/io5";
 import { useState } from "react";
 import AddToWorkflowModal from "@/components/add-to-workflow-modal";
 
-export default function drawerDemo() {
+export default function DrawerDemo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (

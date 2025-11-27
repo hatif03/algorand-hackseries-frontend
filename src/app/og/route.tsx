@@ -75,9 +75,11 @@ export async function GET(req: NextRequest) {
           </div>
         </div>
 
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={`${siteConfig.url}/dashboard.png`}
           width={900}
+          alt="Dashboard preview"
           style={{
             position: "relative",
             bottom: -160,
