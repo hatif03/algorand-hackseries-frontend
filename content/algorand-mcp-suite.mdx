@@ -1,0 +1,86 @@
+---
+title: Algorand MCP Suite v0.1.1
+publishedAt: "2024-11-15"
+summary: A deep dive into the 55+ Algorand-native MCP tools and the brand-new Raycast extension that ships with the suite.
+author: "Hatif"
+image: "/introducing.png"
+---
+
+We just shipped **Algorand MCP Suite v0.1.1** – a release that bundles a production-ready Model Context Protocol server with a polished Raycast extension. The goal is simple: give AI agents *and* humans first-class access to Algorand accounts, assets, swaps, and docs from one codebase.
+
+## 🎯 What's inside the suite?
+
+### 🤖 MCP Server (55+ tools)
+
+- **Basic utilities**: echo, calculate, get current time, and fund testnet wallets.
+- **Core Algorand ops**: account generation, payments, ASA creation, transfers, transaction lookup.
+- **Swap workflow**: five new tools powered by the Pera Swap SDK with multi-DEX aggregation.
+- **Utility & API access**: encoding helpers, TEAL compile/disassemble, Algod & Indexer calls, NFD lookups.
+- **Advanced transactions**: atomic groups, smart-contract lifecycle, participation keys, ARC-26 QR flows.
+- **Knowledge search**: semantic lookup across Algorand documentation.
+
+### ⚡ Raycast Extension
+
+- Wallet inventory, balance refresh, testnet faucet, and secure export in the menu bar.
+- Send ALGO, transfer ASAs, create assets, and inspect assets without touching a terminal.
+- Real-time swap quotes with price impact, slippage control, and AlgoExplorer deep links.
+- Keyboard-first quick actions (`⌘S`, `⌘X`, `⌘T`, etc.) plus toast feedback for every interaction.
+
+## 🔐 Built with security in mind
+
+- AES-256-GCM encryption keeps mnemonic phrases off the filesystem in plaintext.
+- Environment-based network selection defaults to **testnet** but can be promoted to mainnet instantly.
+- Zod validation sits in front of every tool so malformed payloads never hit Algorand RPCs.
+- Sensitive data is never logged, and wallet memory is scrubbed right after use.
+
+## 🏗️ Architecture snapshot
+
+```
+src/
+├─ index.ts                  # MCP host + router
+├─ algorand.ts               # Core blockchain operations
+├─ utilityTools.ts           # Validation, TEAL compile/disassemble, cryptography
+├─ apiTools.ts               # Algod, Indexer, NFD integrations
+├─ advancedTransactionTools.ts
+├─ arc26Tools.ts
+└─ knowledgeTools.ts         # Semantic doc search
+```
+
+The Raycast folder (`raycast/algorand`) mirrors the same services, so adding a capability to one surface usually unlocks it for both.
+
+## 🚀 Getting started
+
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
+2. **Configure the environment**
+   ```bash
+   cp .env.example .env
+   # then set ALGORAND_NETWORK, ALGOD + Indexer URLs, API tokens, and optional Qdrant/OpenAI keys
+   ```
+3. **Build & run**
+   ```bash
+   npm run build && npm start
+   ```
+4. **Wire up your client**
+   - VS Code MCP extension, Claude Desktop, Cursor IDE, or any MCP-compatible agent.
+   - Point the client at `dist/index.js` and drop your Algorand credentials in the `env` block.
+
+## 🧪 Testing + demos
+
+- `npm run dev` for auto rebuilds during tool development.
+- `npm test` to exercise the toolchain plus manual scenarios listed in `TEST_QUERIES.md`.
+- Want to *see* it in action? Watch the walkthrough → [https://youtu.be/2MtLTSmOi5Y](https://youtu.be/2MtLTSmOi5Y)
+
+## 💡 Why this matters
+
+> “Being able to call Algorand swaps, docs search, and wallet management directly from my AI assistant cut my prototyping time in half.” – Early Raycast tester
+
+If you're building Algorand experiences, this release means:
+
+- **One server, every workflow** – from faucet funding to atomic swaps.
+- **One Raycast command palette** – for humans who prefer hotkeys over scripts.
+- **Shared security + config** – no more copy/pasting mnemonics across tools.
+
+Clone it, configure it, and ship faster on Algorand. 🛠️
