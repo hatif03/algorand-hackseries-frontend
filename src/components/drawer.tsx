@@ -1,3 +1,5 @@
+"use client";
+
 import { Icons } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
 import {
@@ -11,60 +13,72 @@ import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { IoMenuSharp } from "react-icons/io5";
+import { useState } from "react";
+import AddToWorkflowModal from "@/components/add-to-workflow-modal";
 
 export default function drawerDemo() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <Drawer>
-      <DrawerTrigger>
-        <IoMenuSharp className="text-2xl" />
-      </DrawerTrigger>
-      <DrawerContent>
-        <DrawerHeader className="px-6">
-          <div className="">
+    <>
+      <Drawer>
+        <DrawerTrigger>
+          <IoMenuSharp className="text-2xl" />
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerHeader className="px-6">
+            <div className="">
+              <Link
+                href="/"
+                title="brand-logo"
+                className="relative mr-6 flex items-center space-x-2"
+              >
+                <Icons.logo className="w-auto h-[40px]" />
+                <span className="font-bold text-xl">{siteConfig.name}</span>
+              </Link>
+            </div>
+            <nav>
+              <ul className="mt-7 text-left">
+                {siteConfig.header.map((item, index) => (
+                  <li key={index} className="my-3">
+                    {item.trigger ? (
+                      <span className="font-semibold">{item.trigger}</span>
+                    ) : (
+                      <Link href={item.href || ""} className="font-semibold">
+                        {item.label}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </DrawerHeader>
+          <DrawerFooter>
             <Link
-              href="/"
-              title="brand-logo"
-              className="relative mr-6 flex items-center space-x-2"
+              href="https://github.com/hatif03/algorand-mcp#readme"
+              className={buttonVariants({ variant: "outline" })}
+              target="_blank"
+              rel="noreferrer"
             >
-              <Icons.logo className="w-auto h-[40px]" />
-              <span className="font-bold text-xl">{siteConfig.name}</span>
+              View docs
             </Link>
-          </div>
-          <nav>
-            <ul className="mt-7 text-left">
-              {siteConfig.header.map((item, index) => (
-                <li key={index} className="my-3">
-                  {item.trigger ? (
-                    <span className="font-semibold">{item.trigger}</span>
-                  ) : (
-                    <Link href={item.href || ""} className="font-semibold">
-                      {item.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </DrawerHeader>
-        <DrawerFooter>
-          <Link
-            href="/login"
-            className={buttonVariants({ variant: "outline" })}
-          >
-            Login
-          </Link>
-          <Link
-            href="/signup"
-            className={cn(
-              buttonVariants({ variant: "default" }),
-              "w-full sm:w-auto text-background flex gap-2"
-            )}
-          >
-            <Icons.logo className="h-6 w-6" />
-            Get Started for Free
-          </Link>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className={cn(
+                buttonVariants({ variant: "default" }),
+                "w-full sm:w-auto text-background flex gap-2"
+              )}
+            >
+              <Icons.logo className="h-6 w-6" />
+              Add to workflow
+            </button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+      <AddToWorkflowModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
   );
 }

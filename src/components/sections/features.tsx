@@ -8,7 +8,7 @@ const data = [
     title: "Wallet & portfolio hub",
     content:
       "Generate accounts, encrypt mnemonics, refresh balances, and view ASAs in both MCP clients and Raycast.",
-    image: "/dashboard.png",
+    image: "/raycas_account_info.png",
     icon: <BarChart3 className="h-6 w-6 text-primary" />,
   },
   {
@@ -16,7 +16,7 @@ const data = [
     title: "Swap + asset operations",
     content:
       "Create ASAs, transfer tokens, and swap via the Pera SDK with real-time quotes, slippage controls, and AlgoExplorer deep links.",
-    image: "/dashboard.png",
+    image: "/Swap_quote.png",
     icon: <Brain className="h-6 w-6 text-primary" />,
   },
   {
@@ -24,7 +24,7 @@ const data = [
     title: "API + knowledge layer",
     content:
       "Algod, Indexer, and NFD APIs plus semantic doc search so assistants can answer questions without leaving the convo.",
-    image: "/dashboard.png",
+    image: "/mcp-screenshot.png",
     icon: <LineChart className="h-6 w-6 text-primary" />,
   },
   {
@@ -32,7 +32,7 @@ const data = [
     title: "Raycast quick actions",
     content:
       "Keyboard shortcuts for funding, swaps, wallet reset, and copy-to-clipboard flows—perfect for ops teams on macOS.",
-    image: "/dashboard.png",
+    image: "/raycast_tools.png",
     icon: <FileText className="h-6 w-6 text-primary" />,
   },
 ];

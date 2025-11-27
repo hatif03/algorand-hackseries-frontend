@@ -8,7 +8,7 @@ const data = [
     title: "1. Configure the suite",
     content:
       "Clone the repo, run npm install, and drop your Algorand credentials plus Algod/Indexer endpoints into .env (testnet by default).",
-    image: "/dashboard.png",
+    image: "/mcp-screenshot.png",
     icon: <Upload className="w-6 h-6 text-primary" />,
   },
   {
@@ -16,7 +16,7 @@ const data = [
     title: "2. Connect MCP + Raycast",
     content:
       "Point VS Code, Claude Desktop, or Cursor at dist/index.js, then build/import the Raycast extension to keep humans in the loop.",
-    image: "/dashboard.png",
+    image: "/raycast_screenshot.png",
     icon: <Zap className="w-6 h-6 text-primary" />,
   },
   {
@@ -24,7 +24,7 @@ const data = [
     title: "3. Ship Algorand workflows",
     content:
       "Call wallets, ASAs, swaps, and doc search from agents or Raycast, then monitor everything in AlgoExplorer using the included shortcuts.",
-    image: "/dashboard.png",
+    image: "/transaction_history.png",
     icon: <Sparkles className="w-6 h-6 text-primary" />,
   },
 ];

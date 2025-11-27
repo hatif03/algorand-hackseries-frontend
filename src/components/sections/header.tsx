@@ -8,9 +8,11 @@ import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import AddToWorkflowModal from "@/components/add-to-workflow-modal";
 
 export default function Header() {
   const [addBorder, setAddBorder] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,18 +61,16 @@ export default function Header() {
               >
                 View docs
               </Link>
-              <Link
-                href="https://github.com/hatif03/algorand-mcp"
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className={cn(
                   buttonVariants({ variant: "default" }),
                   "w-full sm:w-auto text-background flex gap-2"
                 )}
-                target="_blank"
-                rel="noreferrer"
               >
                 <Icons.logo className="h-6 w-6" />
-                Launch the toolkit
-              </Link>
+                Add to workflow
+              </button>
             </div>
           </div>
         </div>
@@ -83,6 +83,10 @@ export default function Header() {
           "absolute w-full bottom-0 transition-opacity duration-300 ease-in-out",
           addBorder ? "opacity-100" : "opacity-0"
         )}
+      />
+      <AddToWorkflowModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
       />
     </header>
   );

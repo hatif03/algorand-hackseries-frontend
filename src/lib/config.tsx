@@ -77,7 +77,7 @@ export const siteConfig = {
           },
           {
             title: "Swaps & quick actions",
-            href: "#testimonials",
+            href: "#features",
             description:
               "Pera Swap integration plus shortcuts like ⌘X, ⌘T, ⌘R, and ⌘F for daily ops.",
           },

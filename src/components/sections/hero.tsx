@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import { Icons } from "@/components/icons";
 import HeroVideoDialog from "@/components/magicui/hero-video";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import AddToWorkflowModal from "@/components/add-to-workflow-modal";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -88,6 +89,8 @@ function HeroTitles() {
 }
 
 function HeroCTA() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
       <motion.div
@@ -96,18 +99,16 @@ function HeroCTA() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8, ease }}
       >
-        <Link
-          href="https://github.com/hatif03/algorand-mcp"
+        <button
+          onClick={() => setIsModalOpen(true)}
           className={cn(
             buttonVariants({ variant: "default" }),
             "w-full sm:w-auto text-background flex gap-2"
           )}
-          target="_blank"
-          rel="noreferrer"
         >
           <Icons.logo className="h-6 w-6" />
-          Launch the toolkit
-        </Link>
+          Add to workflow
+        </button>
       </motion.div>
       <motion.p
         className="mt-5 text-sm text-muted-foreground"
@@ -117,6 +118,10 @@ function HeroCTA() {
       >
         Open-source, MIT licensed, and ready for VS Code MCP, Claude Desktop, Raycast, and Cursor IDE.
       </motion.p>
+      <AddToWorkflowModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </>
   );
 }
@@ -132,7 +137,7 @@ function HeroImage() {
       <HeroVideoDialog
         animationStyle="from-center"
         videoSrc="https://www.youtube.com/embed/2MtLTSmOi5Y"
-        thumbnailSrc="/introducing.png"
+        thumbnailSrc="/mcp-screenshot.png"
         thumbnailAlt="Algorand MCP + Raycast demo"
         className="border rounded-lg shadow-lg max-w-screen-lg mt-16"
       />
