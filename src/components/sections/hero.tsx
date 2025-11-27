@@ -24,7 +24,7 @@ function HeroPill() {
         📣 Announcement
       </div>
       <p className="text-xs font-medium text-primary sm:text-sm">
-        Algorand MCP Suite v0.1.1
+        Algodev Studio v0.1.1
       </p>
       <svg
         width="12"
@@ -56,7 +56,7 @@ function HeroTitles() {
           staggerChildren: 0.2,
         }}
       >
-        {["Ship", "Algorand", "workflows", "with MCP"].map((text, index) => (
+        {["The", "AI", "tooling", "layer", "for", "Agents", "on", "Algorand"].map((text, index) => (
           <motion.span
             key={index}
             className="inline-block px-1 md:px-2 text-balance font-semibold"

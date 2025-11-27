@@ -13,11 +13,8 @@ import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { IoMenuSharp } from "react-icons/io5";
-import { useState } from "react";
-import AddToWorkflowModal from "@/components/add-to-workflow-modal";
 
 export default function DrawerDemo() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
@@ -63,7 +60,10 @@ export default function DrawerDemo() {
               View docs
             </Link>
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => {
+                // Dispatch custom event to open modal in CTA section
+                window.dispatchEvent(new CustomEvent("openAddToWorkflowModal"));
+              }}
               className={cn(
                 buttonVariants({ variant: "default" }),
                 "w-full sm:w-auto text-background flex gap-2"
@@ -75,10 +75,6 @@ export default function DrawerDemo() {
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-      <AddToWorkflowModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
     </>
   );
 }

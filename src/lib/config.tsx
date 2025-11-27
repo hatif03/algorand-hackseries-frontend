@@ -5,7 +5,7 @@ import { FaYoutube } from "react-icons/fa6";
 export const BLUR_FADE_DELAY = 0.15;
 
 export const siteConfig = {
-  name: "Algorand MCP Suite",
+  name: "Algodev Studio",
   description: "55+ Algorand-native MCP tools plus a Raycast extension",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   keywords: [
@@ -182,7 +182,7 @@ export const siteConfig = {
   ],
   faqs: [
     {
-      question: "What is the Algorand MCP Suite?",
+      question: "What is Algodev Studio?",
       answer: (
         <span>
           It is an open-source Model Context Protocol server plus Raycast

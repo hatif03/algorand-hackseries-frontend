@@ -28,23 +28,21 @@ export default function AddToWorkflowModal({
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md"
-          />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md"
+        >
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
             onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-4xl bg-background rounded-2xl border shadow-lg p-6 mx-4 md:mx-0"
           >
-            <div className="relative w-full max-w-4xl bg-background rounded-2xl border shadow-lg p-6">
               <button
                 onClick={onClose}
                 className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors z-10"
@@ -58,7 +56,7 @@ export default function AddToWorkflowModal({
                     Add to Workflow
                   </h2>
                   <p className="text-sm text-muted-foreground">
-                    Choose how you want to integrate the Algorand MCP Suite
+                    Choose how you want to integrate Algodev Studio
                   </p>
                 </div>
 
@@ -120,9 +118,8 @@ export default function AddToWorkflowModal({
                   </button>
                 </div>
               </div>
-            </div>
           </motion.div>
-        </>
+        </motion.div>
       )}
     </AnimatePresence>
   );

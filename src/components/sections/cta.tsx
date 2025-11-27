@@ -1,14 +1,39 @@
+"use client";
+
 import { Icons } from "@/components/icons";
 import Section from "@/components/section";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import AddToWorkflowModal from "@/components/add-to-workflow-modal";
 
 export default function CtaSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Listen for custom event from navbar
+    const handleOpenModal = () => {
+      setIsModalOpen(true);
+    };
+
+    window.addEventListener("openAddToWorkflowModal", handleOpenModal);
+
+    // Check if we should open modal from URL hash
+    if (window.location.hash === "#add-to-workflow") {
+      setIsModalOpen(true);
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+
+    return () => {
+      window.removeEventListener("openAddToWorkflowModal", handleOpenModal);
+    };
+  }, []);
+
   return (
     <Section
       id="cta"
-      title="Ready to run the Algorand MCP Suite?"
+      title="Ready to run Algodev Studio?"
       subtitle="Clone the repo, import the Raycast extension, and ship workflows today."
       className="bg-primary/10 rounded-xl py-16"
     >
@@ -16,8 +41,8 @@ export default function CtaSection() {
         <Link
           href="https://github.com/hatif03/algorand-mcp"
           className={cn(
-            buttonVariants({ variant: "default" }),
-            "w-full sm:w-auto text-background flex gap-2"
+            buttonVariants({ variant: "outline" }),
+            "w-full sm:w-auto flex gap-2"
           )}
           target="_blank"
           rel="noreferrer"
@@ -25,7 +50,21 @@ export default function CtaSection() {
           <Icons.logo className="h-6 w-6" />
           Open the GitHub repo
         </Link>
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className={cn(
+            buttonVariants({ variant: "default" }),
+            "w-full sm:w-auto text-background flex gap-2"
+          )}
+        >
+          <Icons.logo className="h-6 w-6" />
+          Add to workflow
+        </button>
       </div>
+      <AddToWorkflowModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </Section>
   );
 }

@@ -21,7 +21,7 @@ const data = [
   },
   {
     id: 3,
-    title: "3. Ship Algorand workflows",
+    title: "3. Build Algorand workflows",
     content:
       "Call wallets, ASAs, swaps, and doc search from agents or Raycast, then monitor everything in AlgoExplorer using the included shortcuts.",
     image: "/transaction_history.png",

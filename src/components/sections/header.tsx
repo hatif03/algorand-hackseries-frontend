@@ -8,11 +8,9 @@ import { siteConfig } from "@/lib/config";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import AddToWorkflowModal from "@/components/add-to-workflow-modal";
 
 export default function Header() {
   const [addBorder, setAddBorder] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +60,10 @@ export default function Header() {
                 View docs
               </Link>
               <button
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  // Dispatch custom event to open modal in CTA section
+                  window.dispatchEvent(new CustomEvent("openAddToWorkflowModal"));
+                }}
                 className={cn(
                   buttonVariants({ variant: "default" }),
                   "w-full sm:w-auto text-background flex gap-2"
@@ -83,10 +84,6 @@ export default function Header() {
           "absolute w-full bottom-0 transition-opacity duration-300 ease-in-out",
           addBorder ? "opacity-100" : "opacity-0"
         )}
-      />
-      <AddToWorkflowModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
       />
     </header>
   );
