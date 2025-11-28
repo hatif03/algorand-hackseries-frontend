@@ -33,8 +33,8 @@ export default function CtaSection() {
   return (
     <Section
       id="cta"
-      title="Ready to run Algodev Studio?"
-      subtitle="Clone the repo, import the Raycast extension, and ship workflows today."
+      title="Ready to run AlgoDev Studio?"
+      subtitle="Install the hosted MCP server with one click, sync Raycast, and ship workflows immediately."
       className="bg-primary/10 rounded-xl py-16"
     >
       <div className="flex flex-col w-full sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">

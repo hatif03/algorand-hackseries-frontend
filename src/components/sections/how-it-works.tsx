@@ -5,25 +5,25 @@ import { Sparkles, Upload, Zap } from "lucide-react";
 const data = [
   {
     id: 1,
-    title: "1. Configure the suite",
+    title: "1. One-click install",
     content:
-      "Clone the repo, run npm install, and drop your Algorand credentials plus Algod/Indexer endpoints into .env (testnet by default).",
+      "Use the Add to Workflow modal and hosted MCP endpoint—no cloning or manual env bootstrapping required.",
     image: "/mcp-screenshot.png",
     icon: <Upload className="w-6 h-6 text-primary" />,
   },
   {
     id: 2,
-    title: "2. Connect MCP + Raycast",
+    title: "2. Connect IDEs + Raycast",
     content:
-      "Point VS Code, Claude Desktop, or Cursor at dist/index.js, then build/import the Raycast extension to keep humans in the loop.",
+      "Drop the generated config into Cursor, Claude, or VS Code and keep Raycast in sync for humans in the loop.",
     image: "/raycast_screenshot.png",
     icon: <Zap className="w-6 h-6 text-primary" />,
   },
   {
     id: 3,
-    title: "3. Build Algorand workflows",
+    title: "3. Build dev workflows (mainnet soon)",
     content:
-      "Call wallets, ASAs, swaps, and doc search from agents or Raycast, then monitor everything in AlgoExplorer using the included shortcuts.",
+      "Ship wallets, ASAs, swaps, and docs searches against our testnet-first environment today while we finalize mainnet rollout.",
     image: "/transaction_history.png",
     icon: <Sparkles className="w-6 h-6 text-primary" />,
   },

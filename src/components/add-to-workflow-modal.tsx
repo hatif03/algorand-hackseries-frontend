@@ -56,7 +56,7 @@ export default function AddToWorkflowModal({
                     Add to Workflow
                   </h2>
                   <p className="text-sm text-muted-foreground">
-                    Choose how you want to integrate Algodev Studio
+                    Choose how you want to integrate AlgoDev Studio
                   </p>
                 </div>
 
@@ -106,13 +106,13 @@ export default function AddToWorkflowModal({
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <h3 className="font-semibold text-lg">Install Raycast Extension</h3>
+                        <h3 className="font-semibold text-lg">Raycast Extension</h3>
                         <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
                           Coming Soon
                         </span>
                       </div>
                       <p className="text-sm text-muted-foreground">
-                        Import the Raycast extension for macOS toolbar integration
+                        Launch-ready soon and will activate without any extra setup.
                       </p>
                     </div>
                   </button>

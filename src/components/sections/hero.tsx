@@ -13,9 +13,10 @@ const ease = [0.16, 1, 0.3, 1];
 
 function HeroPill() {
   return (
-    <motion.a
-      href="/blog/algorand-mcp-suite"
-      className="flex w-auto items-center space-x-2 rounded-full bg-primary/20 px-2 py-1 ring-1 ring-accent whitespace-pre"
+    <motion.div
+      role="status"
+      aria-live="polite"
+      className="flex w-auto items-center space-x-2 rounded-full bg-primary/20 px-2 py-1 ring-1 ring-accent whitespace-pre select-none"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease }}
@@ -24,22 +25,9 @@ function HeroPill() {
         📣 Announcement
       </div>
       <p className="text-xs font-medium text-primary sm:text-sm">
-        Algodev Studio v0.1.1
+        One-click Add MCP is live
       </p>
-      <svg
-        width="12"
-        height="12"
-        className="ml-1"
-        viewBox="0 0 12 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8.78141 5.33312L5.20541 1.75712L6.14808 0.814453L11.3334 5.99979L6.14808 11.1851L5.20541 10.2425L8.78141 6.66645H0.666748V5.33312H8.78141Z"
-          fill="hsl(var(--primary))"
-        />
-      </svg>
-    </motion.a>
+    </motion.div>
   );
 }
 
@@ -82,7 +70,7 @@ function HeroTitles() {
           ease,
         }}
       >
-        55+ Algorand-native tools plus a Raycast extension so agents and humans can manage accounts, ASAs, swaps, and docs from one toolkit.
+        55+ Algorand-native tools plus a Raycast extension, now pre-deployed for one-click MCP installs so you can wire agents and humans into the same dev workflow in seconds. Testnet is live today and mainnet support is right around the corner.
       </motion.p>
     </div>
   );
@@ -116,7 +104,7 @@ function HeroCTA() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.0, duration: 0.8 }}
       >
-        Open-source, MIT licensed, and ready for VS Code MCP, Claude Desktop, Raycast, and Cursor IDE.
+        Open-source, MIT licensed, and focused on powering developer workflows while we finalize mainnet support.
       </motion.p>
       <AddToWorkflowModal
         isOpen={isModalOpen}

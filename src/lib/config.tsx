@@ -5,7 +5,7 @@ import { FaYoutube } from "react-icons/fa6";
 export const BLUR_FADE_DELAY = 0.15;
 
 export const siteConfig = {
-  name: "Algodev Studio",
+  name: "AlgoDev Studio",
   description: "55+ Algorand-native MCP tools plus a Raycast extension",
   url: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
   keywords: [
@@ -19,7 +19,7 @@ export const siteConfig = {
     "Algod",
   ],
   links: {
-    email: "hello@algorandmcp.dev",
+    email: "hello@raihankhan.dev",
     twitter: "https://x.com/Algorand",
     discord: "https://discord.gg/algorand",
     github: "https://github.com/hatif03/algorand-mcp",
@@ -33,7 +33,7 @@ export const siteConfig = {
           icon: <Icons.logo className="h-6 w-6" />,
           title: "55+ Algorand tools",
           description:
-            "Model Context Protocol server covering wallets, swaps, docs search, and ARC-26 utilities.",
+            "Hosted MCP server covering wallets, swaps, docs search, and ARC-26 utilities with one-click install.",
           href: "#solution",
         },
         items: [
@@ -47,13 +47,13 @@ export const siteConfig = {
             href: "#how-it-works",
             title: "Developer workflow",
             description:
-              "Configure env vars, connect VS Code/Claude/Cursor, and start shipping MCP commands.",
+              "Install instantly, connect VS Code/Claude/Cursor, and keep Raycast in sync for humans.",
           },
           {
             href: "#problem",
             title: "Security & config",
             description:
-              "AES-256-GCM wallet storage, testnet defaults, and environment-based network promotion.",
+              "AES-256-GCM wallet storage, testnet defaults today, and clear mainnet migration path.",
           },
         ],
       },
@@ -119,10 +119,6 @@ export const siteConfig = {
       },
     },
     {
-      href: "/blog",
-      label: "Updates",
-    },
-    {
       href: "https://github.com/hatif03/algorand-mcp",
       label: "GitHub",
     },
@@ -142,7 +138,7 @@ export const siteConfig = {
         "Swap + ARC-26 utilities",
       ],
       description: "Perfect for hackathons, demos, and personal automation.",
-      buttonText: "Clone the repo",
+      buttonText: "Install instantly",
       isPopular: false,
     },
     {
@@ -171,7 +167,7 @@ export const siteConfig = {
       features: [
         "Dedicated maintainer hours",
         "Custom tool development",
-        "Mainnet hardening & audits",
+        "Mainnet readiness planning",
         "Private registries & deployment support",
         "SLA-backed response times",
       ],
@@ -182,7 +178,7 @@ export const siteConfig = {
   ],
   faqs: [
     {
-      question: "What is Algodev Studio?",
+      question: "What is AlgoDev Studio?",
       answer: (
         <span>
           It is an open-source Model Context Protocol server plus Raycast
@@ -195,9 +191,10 @@ export const siteConfig = {
       question: "How do I get started?",
       answer: (
         <span>
-          Clone the repository, run <code>npm install</code>, drop your Algorand
-          credentials in <code>.env</code>, then point your MCP-capable client
-          (VS Code, Claude Desktop, Cursor, etc.) at <code>dist/index.js</code>.
+          Use the Add to Workflow modal for a one-click install of the hosted
+          MCP server, then point your MCP-capable client (VS Code, Claude
+          Desktop, Cursor, etc.) at the generated config. You can still clone
+          the repo for customization, but it is no longer required.
         </span>
       ),
     },
@@ -215,19 +212,18 @@ export const siteConfig = {
       question: "Does the Raycast extension require additional setup?",
       answer: (
         <span>
-          Yes. Navigate to <code>raycast/algorand</code>, install dependencies,
-          run <code>npm run build</code>, and import the folder inside Raycast →
-          Extensions → Import Extension.
+          The Raycast extension will be available soon and will not require any
+          additional setup.
         </span>
       ),
     },
     {
-      question: "Can I run swaps on mainnet?",
+      question: "Is mainnet supported yet?",
       answer: (
         <span>
-          Absolutely. Set the Algorand network env vars to mainnet endpoints,
-          supply a funded wallet, and the Pera Swap SDK handles quotes across
-          Tinyman, Vestige, and other supported DEXs.
+          Not yet. AlgoDev Studio is focused on powering developer and testing
+          workflows via Algorand testnet today, and we are actively preparing
+          the rollout for mainnet support.
         </span>
       ),
     },
@@ -277,7 +273,7 @@ export const siteConfig = {
         },
         {
           href: "https://testnet.algoexplorer.io/",
-          text: "AlgoExplorer Testnet",
+          text: "Lora Explorer",
           icon: null,
         },
         { href: "https://app.pera.finance/", text: "Pera Swap", icon: null },
@@ -292,7 +288,7 @@ export const siteConfig = {
       title: "Community",
       links: [
         {
-          href: `mailto:${"hello@algorandmcp.dev"}`,
+          href: `mailto:${"hello@raihankhan.dev"}`,
           text: "Email",
           icon: null,
         },
