@@ -272,7 +272,7 @@ export const siteConfig = {
           icon: null,
         },
         {
-          href: "https://testnet.algoexplorer.io/",
+          href: "https://lora.algokit.io/testnet",
           text: "Lora Explorer",
           icon: null,
         },
