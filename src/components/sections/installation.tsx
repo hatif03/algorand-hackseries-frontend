@@ -140,10 +140,10 @@ export default function InstallationSection() {
   return (
     <Section
       title="Installation"
-      subtitle="One-Click Setup for Cursor & Claude"
-      description="Get started in seconds with our MCP server. Choose your IDE and copy the configuration."
+      subtitle="One-Click Setup for Cursor, Claude & Raycast"
+      description="Get started in seconds with our MCP server or Raycast extension. Choose your preferred tool and install instantly."
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {/* Cursor Installation */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -375,6 +375,83 @@ export default function InstallationSection() {
                   </>
                 )}
               </button>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* Raycast Extension */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="md:col-span-2 lg:col-span-1"
+        >
+          <Card className="h-full border-2 hover:border-primary/50 transition-colors">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="text-2xl">Raycast</CardTitle>
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="text-primary"
+                  >
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                  </svg>
+                </div>
+              </div>
+              <CardDescription>
+                Native macOS toolbar integration for Algorand
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <h4 className="text-sm font-semibold">Features:</h4>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Wallet management & balance checks</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Token swaps with Pera integration</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>ASA creation & management</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>Testnet faucet & transaction history</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex flex-col items-center justify-center pt-4">
+                <a
+                  title="Install algorand Raycast Extension"
+                  href="https://www.raycast.com/raihan_khan/algorand"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-transform hover:scale-105"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://www.raycast.com/raihan_khan/algorand/install_button@2x.png?v=1.1"
+                    height="64"
+                    alt="Install algorand Raycast Extension"
+                    style={{ height: "64px" }}
+                  />
+                </a>
+                <p className="text-xs text-muted-foreground mt-3 text-center">
+                  Click to install from the Raycast Store
+                </p>
+              </div>
             </CardContent>
           </Card>
         </motion.div>

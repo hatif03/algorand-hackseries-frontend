@@ -13,21 +13,24 @@ const ease = [0.16, 1, 0.3, 1];
 
 function HeroPill() {
   return (
-    <motion.div
+    <motion.a
+      href="https://www.raycast.com/raihan_khan/algorand"
+      target="_blank"
+      rel="noreferrer"
       role="status"
       aria-live="polite"
-      className="flex w-auto items-center space-x-2 rounded-full bg-primary/20 px-2 py-1 ring-1 ring-accent whitespace-pre select-none"
+      className="flex w-auto items-center space-x-2 rounded-full bg-primary/20 px-2 py-1 ring-1 ring-accent whitespace-pre select-none hover:bg-primary/30 transition-colors cursor-pointer"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease }}
     >
       <div className="w-fit rounded-full bg-accent px-2 py-0.5 text-center text-xs font-medium text-primary sm:text-sm">
-        📣 Announcement
+        🎉 New Release
       </div>
       <p className="text-xs font-medium text-primary sm:text-sm">
-        One-click Add MCP is live
+        Raycast Extension is now live!
       </p>
-    </motion.div>
+    </motion.a>
   );
 }
 
@@ -70,7 +73,7 @@ function HeroTitles() {
           ease,
         }}
       >
-        55+ Algorand-native tools plus a Raycast extension, now pre-deployed for one-click MCP installs so you can wire agents and humans into the same dev workflow in seconds. Testnet is live today and mainnet support is right around the corner.
+        55+ MCP tools. One-click install. Ship Algorand agents in seconds.
       </motion.p>
     </div>
   );
@@ -91,7 +94,7 @@ function HeroCTA() {
           onClick={() => setIsModalOpen(true)}
           className={cn(
             buttonVariants({ variant: "default" }),
-            "w-full sm:w-auto text-background flex gap-2"
+            "w-full sm:w-auto text-white flex gap-2"
           )}
         >
           <Icons.logo className="h-6 w-6" />
@@ -125,7 +128,7 @@ function HeroImage() {
       <HeroVideoDialog
         animationStyle="from-center"
         videoSrc="https://www.youtube.com/embed/2MtLTSmOi5Y"
-        thumbnailSrc="/mcp-screenshot.png"
+        thumbnailSrc="/thumbnail.png"
         thumbnailAlt="Algorand MCP + Raycast demo"
         className="border rounded-lg shadow-lg max-w-screen-lg mt-16"
       />

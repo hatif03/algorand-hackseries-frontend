@@ -87,7 +87,7 @@ export default function Component() {
     <Section
       title="Solution"
       subtitle="One toolkit for MCP agents and Raycast power users"
-      description="Spin up the MCP server for AI assistants, and soon enable the Raycast extension for humans with zero extra setup—both pointed at the same secure Algorand stack."
+      description="Spin up the MCP server for AI assistants, and enable the Raycast extension for humans with zero extra setup—both pointed at the same secure Algorand stack."
       className="bg-neutral-100 dark:bg-neutral-900"
     >
       <div className="mx-auto mt-16 grid max-w-sm grid-cols-1 gap-6 text-gray-500 md:max-w-3xl md:grid-cols-2 xl:grid-rows-2 md:grid-rows-3 xl:max-w-6xl xl:auto-rows-fr xl:grid-cols-3">

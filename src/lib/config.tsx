@@ -82,9 +82,9 @@ export const siteConfig = {
               "Pera Swap integration plus shortcuts like ⌘X, ⌘T, ⌘R, and ⌘F for daily ops.",
           },
           {
-            title: "Raycast README",
-            href: "https://github.com/hatif03/algorand-mcp/blob/main/raycast/algorand/README.md",
-            description: "Step-by-step install and build instructions.",
+            title: "Install from Raycast Store",
+            href: "https://www.raycast.com/raihan_khan/algorand",
+            description: "One-click install from the official Raycast Store.",
           },
         ],
       },
@@ -212,8 +212,11 @@ export const siteConfig = {
       question: "Does the Raycast extension require additional setup?",
       answer: (
         <span>
-          The Raycast extension will be available soon and will not require any
-          additional setup.
+          The Raycast extension is now available on the{" "}
+          <a href="https://www.raycast.com/raihan_khan/algorand" target="_blank" rel="noreferrer" className="text-primary underline underline-offset-4 hover:text-primary/80">
+            Raycast Store
+          </a>
+          . Just install it and you&apos;re ready to go—no additional setup required.
         </span>
       ),
     },
@@ -247,8 +250,8 @@ export const siteConfig = {
           icon: null,
         },
         {
-          href: "https://github.com/hatif03/algorand-mcp/blob/main/raycast/algorand/README.md",
-          text: "Raycast README",
+          href: "https://www.raycast.com/raihan_khan/algorand",
+          text: "Raycast Store",
           icon: null,
         },
         {

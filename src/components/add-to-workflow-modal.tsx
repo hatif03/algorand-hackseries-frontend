@@ -88,34 +88,36 @@ export default function AddToWorkflowModal({
                     </div>
                   </button>
 
-                  {/* Raycast Extension Option - Disabled */}
-                  <button
-                    disabled
+                  {/* Raycast Extension Option */}
+                  <a
+                    href="https://www.raycast.com/raihan_khan/algorand"
+                    target="_blank"
+                    rel="noreferrer"
                     className={cn(
-                      "w-full p-6 rounded-lg border-2 border-muted opacity-50 cursor-not-allowed text-left flex flex-col",
-                      "bg-muted/30"
+                      "w-full p-6 rounded-lg border-2 border-primary/20 hover:border-primary/40 transition-all text-left group",
+                      "bg-primary/5 hover:bg-primary/10 flex flex-col"
                     )}
                   >
-                    <div className="relative w-full h-32 rounded-lg overflow-hidden mb-4 border border-muted">
+                    <div className="relative w-full h-32 rounded-lg overflow-hidden mb-4 border border-primary/20 group-hover:border-primary/40 transition-colors">
                       <Image
-                        src="/raycast_screenshot.png"
+                        src="/thumbnail.png"
                         alt="Raycast Extension"
                         fill
-                        className="object-cover opacity-60"
+                        className="object-cover"
                       />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
                         <h3 className="font-semibold text-lg">Raycast Extension</h3>
-                        <span className="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground">
-                          Coming Soon
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-primary/20 text-primary">
+                          Available Now
                         </span>
                       </div>
                       <p className="text-sm text-muted-foreground">
-                        Launch-ready soon and will activate without any extra setup.
+                        Install the Algorand extension from the Raycast Store.
                       </p>
                     </div>
-                  </button>
+                  </a>
                 </div>
               </div>
           </motion.div>

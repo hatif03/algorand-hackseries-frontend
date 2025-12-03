@@ -54,12 +54,33 @@ export default function CtaSection() {
           onClick={() => setIsModalOpen(true)}
           className={cn(
             buttonVariants({ variant: "default" }),
-            "w-full sm:w-auto text-background flex gap-2"
+            "w-full sm:w-auto text-white flex gap-2"
           )}
         >
           <Icons.logo className="h-6 w-6" />
           Add to workflow
         </button>
+        <Link
+          href="https://www.raycast.com/raihan_khan/algorand"
+          className={cn(
+            buttonVariants({ variant: "outline" }),
+            "w-full sm:w-auto flex gap-2"
+          )}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+          </svg>
+          Install Raycast Extension
+        </Link>
       </div>
       <AddToWorkflowModal
         isOpen={isModalOpen}
